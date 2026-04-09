@@ -1,6 +1,6 @@
 {
   "name": "opencode-cache-timer",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "OpenCode TUI sidebar plugin: prompt cache TTL countdown for Claude, GPT, Gemini, DeepSeek, and more",
   "keywords": [
     "opencode",
@@ -27,7 +27,8 @@
   "type": "module",
   "main": "./dist/index.tsx",
   "exports": {
-    ".": "./dist/index.tsx"
+    ".": "./dist/index.tsx",
+    "./tui": "./dist/index.tsx"
   },
   "files": [
     "dist",
