@@ -1,11 +1,51 @@
 {
   "name": "opencode-cache-timer",
   "version": "0.1.0",
-  "description": "OpenCode TUI sidebar plugin: prompt cache TTL countdown",
+  "description": "OpenCode TUI sidebar plugin: prompt cache TTL countdown for Claude, GPT, Gemini, DeepSeek, and more",
+  "keywords": [
+    "opencode",
+    "opencode-plugin",
+    "tui",
+    "sidebar",
+    "cache",
+    "prompt-cache",
+    "countdown",
+    "anthropic",
+    "claude",
+    "openai"
+  ],
+  "license": "MIT",
+  "author": "nero-sensei",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nero-sensei/opencode-cache-timer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nero-sensei/opencode-cache-timer/issues"
+  },
+  "homepage": "https://github.com/nero-sensei/opencode-cache-timer#readme",
   "type": "module",
+  "main": "./dist/index.tsx",
+  "exports": {
+    ".": "./dist/index.tsx"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
+    "build": "bun scripts/build.ts",
+    "clean": "rm -rf dist",
     "test": "bun test",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "bun run typecheck && bun run test && bun run clean && bun run build"
+  },
+  "peerDependencies": {
+    "@opencode-ai/plugin": ">=1.3.0",
+    "@opencode-ai/sdk": ">=1.3.0",
+    "@opentui/solid": ">=0.1.96",
+    "solid-js": ">=1.9.0"
   },
   "devDependencies": {
     "@opencode-ai/plugin": "1.3.16",
@@ -15,5 +55,9 @@
     "@types/bun": "latest",
     "solid-js": "^1.9.0",
     "typescript": "5.8.2"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
   }
 }
